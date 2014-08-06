@@ -8,9 +8,9 @@ import (
 
 
 func main() {
-	var storageHandler * handlers.StorageHandler = handlers.New("/browse/", "/tmp/martial")
+	var storageHandler * handlers.StorageHandlerDefinition = handlers.New("/browse/", "/tmp/martial")
 	http.HandleFunc(storageHandler.UrlBase, storageHandler.CreateHandler())
-	http.Handle("/", http.FileServer(http.Dir("/tmp")))
+	//TODO 404 handling
 	error := http.ListenAndServe(":8080", nil)
 	if(error!=nil){
 		log.Fatal(error)
