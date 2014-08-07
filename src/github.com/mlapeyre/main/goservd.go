@@ -2,7 +2,7 @@ package main
 
 import (
 	"net/http"
-	"handlers"
+	"github.com/mlapeyre/handlers"
 	"log"
 )
 
